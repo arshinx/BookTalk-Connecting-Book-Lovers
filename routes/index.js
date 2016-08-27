@@ -14,7 +14,7 @@ router.get('/register', function(req, res, next){
 
 // POST /register
 router.post('/register', function(req, res, next){
-  
+  return res.send('User Created!');
 });
 
 // GET /about
