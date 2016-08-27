@@ -6,5 +6,22 @@ var UserSchema = new mongoose.Schema({
     unique: true,
     required: true,
     trim: true
+  },
+
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+
+  favoriteBook: {
+    type: String,
+    required: true,
+    trim: true
+  },
+
+  password: {
+    type: String,
+    required: true
   }
 })
