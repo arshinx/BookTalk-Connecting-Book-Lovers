@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 // GET /register
 router.get('/', function(req, res, next){
-  return res.send('Register Today!');
+  return res.send('Register Today!'); 
 });
 
 // GET /about
