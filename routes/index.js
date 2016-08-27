@@ -23,6 +23,15 @@ router.post('/register', function(req, res, next){
       err.status = 400;
       return next(err);
     }
+
+    // Create Object Using Form Data
+    var userData = {
+      email: req.body.email,
+      name: req.body.name,
+      favoriteBook: req.body.favoriteBook,
+      password: req.body.password
+    }
+
   } else {
     var err = new Error("All fields are required");
     err.status = 404;
