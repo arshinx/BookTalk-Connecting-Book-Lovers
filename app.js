@@ -3,6 +3,13 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
+// MongoDB Connection
+mongoose.connect("mongodb://localhost:27017/bookworm");
+var db = mongoose.connection;
+
+// Mongo Error
+db.on('error', console.error.bind(console, 'connecction error: '));
+
 // parse incoming requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
