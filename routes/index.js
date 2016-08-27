@@ -15,7 +15,12 @@ router.get('/register', function(req, res, next){
 
 // POST /register
 router.post('/register', function(req, res, next){
-  return res.send('User Created!');
+  if (req.body.email && req.body.name && req.body.favoriteBook && req.body.password && req.body.confirmPassword) {
+
+  } else {
+    var err = new Error("All fields are required");
+    
+  }
 });
 
 // GET /about
