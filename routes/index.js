@@ -12,6 +12,11 @@ router.get('/register', function(req, res, next){
   return res.send('Register Today!');
 });
 
+// POST /register
+router.post('/register', function(req, res, next){
+  
+});
+
 // GET /about
 router.get('/about', function(req, res, next) {
   return res.render('about', { title: 'About' });
