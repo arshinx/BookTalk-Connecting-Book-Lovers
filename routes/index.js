@@ -32,6 +32,15 @@ router.post('/register', function(req, res, next){
       password: req.body.password
     }
 
+    // Use Schema's "Create" method to insert Data
+    User.create(userData, function(error, user){
+      if (error) {
+        return next(error);
+      } else {
+        return res.redirect('/profile');
+      }
+    });
+
   } else {
     var err = new Error("All fields are required");
     err.status = 404;
