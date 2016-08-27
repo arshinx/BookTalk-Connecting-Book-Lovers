@@ -19,7 +19,8 @@ router.post('/register', function(req, res, next){
 
   } else {
     var err = new Error("All fields are required");
-    
+    err.status = 404;
+    return next(err);
   }
 });
 
