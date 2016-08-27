@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
 });
 
 // GET /register
-router.get('/', function(req, res, next){
-  return res.send('Register Today!'); 
+router.get('/register', function(req, res, next){
+  return res.send('Register Today!');
 });
 
 // GET /about
