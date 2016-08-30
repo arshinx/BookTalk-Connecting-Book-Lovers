@@ -31,7 +31,7 @@ var UserSchema = new mongoose.Schema({
 
 // pre save method
 UserSchema.pre('save', function(next) {
-
+  var user = this;
 });
 
 var User = mongoose.model('User', UserSchema);
