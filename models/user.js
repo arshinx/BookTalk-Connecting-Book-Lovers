@@ -34,7 +34,15 @@ UserSchema.pre('save', function(next) {
   var user = this;
 
   // user = document, password = field in document
-  bcrypt.hash(user.password);
+  bcrypt.hash(user.password, 10, function(err, hash) {
+
+    if (err) {
+      return next(err);
+    }
+
+    user.password = hash;
+    next();
+  });
 });
 
 var User = mongoose.model('User', UserSchema);
