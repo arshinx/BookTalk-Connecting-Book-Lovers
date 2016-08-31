@@ -15,7 +15,11 @@ router.get('/login', function(req, res, next) {
 
 // POST /login
 router.post('/login', function(req, res, next) {
-  return res.send('Logged In!');
+  if (req.body.email && req.body.password) {
+
+  } else {
+    var err = new Error ('Email and password are required.');
+  }
 });
 
 // GET /register
