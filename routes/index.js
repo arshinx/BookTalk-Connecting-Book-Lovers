@@ -10,6 +10,8 @@ router.get('/', function(req, res, next) {
 
 // GET /profile
 router.get('/profile', function(req, res, next){
+
+  // Redirect for unauthorized access
   if (! req.session.userId) {
     var err = new Error("You are not authorized to view this page.");
     err.status = 403;
