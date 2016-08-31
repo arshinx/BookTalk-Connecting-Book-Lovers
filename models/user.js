@@ -29,7 +29,13 @@ var UserSchema = new mongoose.Schema({
   }
 });
 
-// pre save method
+// Authentication - Login
+UserSchema.statistics.authenticate = function(email, password, callback) {
+  User.findOne({ email: email });
+};
+
+
+// pre save method for hashing password
 UserSchema.pre('save', function(next) {
   var user = this;
 
