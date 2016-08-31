@@ -40,9 +40,14 @@ router.get('/login', function(req, res, next) {
 
 // POST /login
 router.post('/login', function(req, res, next) {
+
+  // Email and Password are not empty
   if (req.body.email && req.body.password) {
+
+    // Attempt Authentication
     User.authenticate(req.body.email, req.body.password, function(error, user){
 
+      // Error or User not found in database (info did not match)
       if (error || !user) {
         var err = new Error("Incorrect Email or Password!");
         err.status = 401;
