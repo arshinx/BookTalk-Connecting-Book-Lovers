@@ -19,6 +19,8 @@ router.post('/login', function(req, res, next) {
 
   } else {
     var err = new Error ('Email and password are required.');
+    err.status = 401;
+    return next(err);
   }
 });
 
