@@ -90,7 +90,7 @@ router.post('/register', function(req, res, next){
       if (error) {
         return next(error);
       } else {
-        return res.redirect('/profile');
+        return res.redirect('/login');
       }
     });
 
