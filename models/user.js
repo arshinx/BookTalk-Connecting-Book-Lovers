@@ -43,7 +43,11 @@ UserSchema.statistics.authenticate = function(email, password, callback) {
 
       // Compare using bcrypt
       bcrypt.compare(password, user.password, function(error, result){
-        
+        if (result === true) {
+          return callback(null, user);
+        } else {
+          return callback();
+        }
       });
     });
 };
