@@ -20,7 +20,15 @@ router.get('/profile', function(req, res, next){
 
   // Retrieve information
   User.findById(eq.session.userId)
-    
+    .exec(function(error, user) {
+
+      // error check
+      if (error) {
+        return next(error);
+      }
+
+      
+    });
 });
 
 // GET /login
