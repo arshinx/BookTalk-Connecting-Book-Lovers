@@ -8,6 +8,11 @@ router.get('/', function(req, res, next) {
   return res.render('index', { title: 'Home' });
 });
 
+// GET /login
+router.get('/login' function(req, res, next) {
+  return res.render('login', {title: 'Log In'})
+})
+
 // GET /register
 router.get('/register', function(req, res, next){
   return res.render('register', {title: 'Sign Up'});
@@ -32,7 +37,7 @@ router.post('/register', function(req, res, next){
       password: req.body.password
     }
 
-    // Use Schema's "Create" method to insert Data 
+    // Use Schema's "Create" method to insert Data
     User.create(userData, function(error, user){
       if (error) {
         return next(error);
