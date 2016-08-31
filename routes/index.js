@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 // GET /login
-router.get('/login' function(req, res, next) {
+router.get('/login', function(req, res, next) {
   return res.render('login', {title: 'Log In'});
 });
 
