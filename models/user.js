@@ -37,6 +37,8 @@ UserSchema.statistics.authenticate = function(email, password, callback) {
         return  callback(error);
       } else if (!user) {
         var err = new Error('User not found!');
+        err.status = 401;
+        return callback(err);
       }
     });
 };
