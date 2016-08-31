@@ -5,6 +5,11 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var app = express();
 
+// Use Sessions for Tracking Logins
+app.use(session({
+  
+}));
+
 // MongoDB Connection
 mongoose.connect("mongodb://localhost:27017/bookworm");
 var db = mongoose.connection;
