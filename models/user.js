@@ -30,9 +30,9 @@ var UserSchema = new mongoose.Schema({
 });
 
 // Authentication - Login
-UserSchema.statistics.authenticate = function(email, password, callback) {
-  User.findOne({ email: email });
-    .exec(function(error, user){
+UserSchema.statics.authenticate = function(email, password, callback) {
+  User.findOne({ email: email })
+    .exec(function(error, user) {
       if (error) {
         return  callback(error);
       } else if (!user) {
