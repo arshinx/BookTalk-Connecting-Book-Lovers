@@ -7,7 +7,7 @@ var app = express();
 
 // Use Sessions for Tracking Logins
 app.use(session({
-  secret: 'session-secret-mnbvasdfpoiu'
+  secret: 'session secret mnbvasdfpoiu',
   resave: true,
   saveUninitialized: false
 }));
