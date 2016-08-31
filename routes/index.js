@@ -19,7 +19,7 @@ router.get('/profile', function(req, res, next){
   }
 
   // Retrieve information
-  User.findById(eq.session.userId)
+  User.findById(req.session.userId)
     .exec(function(error, user) {
 
       // error check
