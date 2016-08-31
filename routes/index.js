@@ -16,7 +16,17 @@ router.get('/login', function(req, res, next) {
 // POST /login
 router.post('/login', function(req, res, next) {
   if (req.body.email && req.body.password) {
-    User.authenticate();
+    User.authenticate(req.body.email, req.body.password, function(error, user){
+
+      if (error || !user) {
+        var err = new Error("Incorrect Email or Password!");
+        err.status = 401;
+        return next(err);
+      }
+
+      // User Authenticated
+      
+    });
   } else {
     var err = new Error ('Email and password are required.');
     err.status = 401;
