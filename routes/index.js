@@ -22,10 +22,12 @@ router.post('/login', function(req, res, next) {
         var err = new Error("Incorrect Email or Password!");
         err.status = 401;
         return next(err);
-      }
+      } else {
 
       // User Authenticated
-      
+      req.session.userId = user._id;
+      return res.redirect('/profile');
+      }
     });
   } else {
     var err = new Error ('Email and password are required.');
