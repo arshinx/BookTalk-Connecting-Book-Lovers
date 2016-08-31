@@ -17,6 +17,10 @@ router.get('/profile', function(req, res, next){
     err.status = 403;
     return next(err);
   }
+
+  // Retrieve information
+  User.findById(eq.session.userId)
+    
 });
 
 // GET /login
