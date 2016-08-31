@@ -40,6 +40,11 @@ UserSchema.statistics.authenticate = function(email, password, callback) {
         err.status = 401;
         return callback(err);
       }
+
+      // Compare using bcrypt
+      bcrypt.compare(password, user.password, function(error, result){
+        
+      });
     });
 };
 
