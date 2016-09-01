@@ -18,7 +18,9 @@ function requiresLogin(req, res, next) {
 
   // User logged in?
   if (req.session.userId) {
-
+    
+    // continue to next piece of middleware
+    return next();
   }
 }
 
