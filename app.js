@@ -1,4 +1,6 @@
+// Handles connections and configurations in App ---
 
+// Require Modules / Middlewares
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
