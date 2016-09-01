@@ -13,7 +13,10 @@ function loggedOut(req, res, next) {
   return next();
 }
 
+// Determine if user is logged in
+function requiresLogin(req, res, next) {
 
+}
 
 // Export Function to use as middleware
 module.exports.loggedOut = loggedOut;
