@@ -5,6 +5,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
+var MongoStore = require('mongo-connect')(session);
 var app = express();
 
 // Use Sessions for Tracking Logins
