@@ -18,10 +18,13 @@ function requiresLogin(req, res, next) {
 
   // User logged in?
   if (req.session.userId) {
-    
+
     // continue to next piece of middleware
     return next();
   }
+
+  // User not logged in
+  var err = new Error('User must be logged in to view this page.');
 }
 
 // Export Function to use as middleware
