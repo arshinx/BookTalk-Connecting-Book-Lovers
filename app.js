@@ -12,7 +12,10 @@ var app = express();
 app.use(session({
   secret: 'session secret mnbvasdfpoiu',
   resave: true,
-  saveUninitialized: false
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: db
+  })
 }));
 
 // Allow User ID Access in Templates
