@@ -30,5 +30,6 @@ function requiresLogin(req, res, next) {
 
 }
 
-// Export Function to use as middleware
+// Export Function(s) to use as middleware
 module.exports.loggedOut = loggedOut;
+module.exports.requiresLogin = requiresLogin;
