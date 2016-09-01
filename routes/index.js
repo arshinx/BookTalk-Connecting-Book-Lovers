@@ -35,7 +35,13 @@ router.get('/profile', function(req, res, next){
 
 // GET /logout
 router.get('/logout', function(req, res, next) {
-  
+  // If session exists
+  if (req.session) {
+    // Delete session object
+    req.session.destroy(function(err) {
+      
+    })
+  }
 });
 
 // GET /login
