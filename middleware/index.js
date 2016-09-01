@@ -23,8 +23,11 @@ function requiresLogin(req, res, next) {
     return next();
   }
 
-  // User not logged in
+  // User not logged in - Display Error
   var err = new Error('User must be logged in to view this page.');
+  err.status = 401;
+  return next(err);
+
 }
 
 // Export Function to use as middleware
