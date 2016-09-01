@@ -2,8 +2,8 @@
 
 var express = require('express');
 var router = express.Router();
-var User = require('../models/user')
-
+var User = require('../models/user');
+var mid = require('../middleware');
 
 // GET /
 router.get('/', function(req, res, next) {
