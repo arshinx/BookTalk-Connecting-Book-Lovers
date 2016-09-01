@@ -16,6 +16,10 @@ function loggedOut(req, res, next) {
 // Determine if user is logged in
 function requiresLogin(req, res, next) {
 
+  // User logged in?
+  if (req.session.userId) {
+
+  }
 }
 
 // Export Function to use as middleware
