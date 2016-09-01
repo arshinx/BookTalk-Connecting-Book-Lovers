@@ -1,7 +1,7 @@
 {
   "name": "authentication-express",
   "version": "1.0.0",
-  "description": "A project for learning how to add authentication to a web application.",
+  "description": "Building a web app to connect book lovers.",
   "author": "Arshin Jain",
   "private": true,
   "scripts": {
