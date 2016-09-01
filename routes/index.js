@@ -1,7 +1,9 @@
+// Defines Routes for App
 
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user')
+
 
 // GET /
 router.get('/', function(req, res, next) {
