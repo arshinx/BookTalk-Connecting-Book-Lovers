@@ -15,7 +15,7 @@ var db = mongoose.connection;
 // Mongo Error
 db.on('error', console.error.bind(console, 'connecction error: '));
 
-// Use Sessions for Tracking Logins
+// Use Sessions for Tracking Logins - Store Sessions in MongoDB use mongooseConnection
 app.use(session({
   secret: 'session secret mnbvasdfpoiu',
   resave: true,
