@@ -8,6 +8,13 @@ var session = require('express-session');
 var MongoStore = require('mongo-connect')(session);
 var app = express();
 
+// MongoDB Connection
+mongoose.connect("mongodb://localhost:27017/bookworm");
+var db = mongoose.connection;
+
+// Mongo Error
+db.on('error', console.error.bind(console, 'connecction error: '));
+
 // Use Sessions for Tracking Logins
 app.use(session({
   secret: 'session secret mnbvasdfpoiu',
@@ -23,13 +30,6 @@ app.use(function(req, res, next){
   res.locals.currentUser = req.session.userId;
   next();
 });
-
-// MongoDB Connection
-mongoose.connect("mongodb://localhost:27017/bookworm");
-var db = mongoose.connection;
-
-// Mongo Error
-db.on('error', console.error.bind(console, 'connecction error: '));
 
 // parse incoming requests
 app.use(bodyParser.json());
