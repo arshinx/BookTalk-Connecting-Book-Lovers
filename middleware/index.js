@@ -18,7 +18,6 @@ function requiresLogin(req, res, next) {
 
   // User logged in?
   if (re.session && req.session.userId) {
-
     // continue to next piece of middleware
     return next();
   }
@@ -26,6 +25,7 @@ function requiresLogin(req, res, next) {
   // User not logged in - Display Error
   var err = new Error('User must be logged in to view this page.');
   err.status = 401;
+  // Return to error handling middleware
   return next(err);
 
 }
